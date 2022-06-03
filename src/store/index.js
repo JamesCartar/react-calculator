@@ -27,8 +27,8 @@ const calculatorSlice = createSlice({
         currentOperand: `${state.currentOperand || ""}${digit}`,
       };
     },
-    clear(state, action) {
-      return {};
+    clear() {
+      return { currentOperand: null, previousOperand: null, operation: null };
     },
     chooseOperation(state, { payload: operation }) {
       if (state.currentOperand === null && state.previousOperand === null) {
